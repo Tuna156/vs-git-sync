@@ -1,6 +1,6 @@
 {
-  "name": "vs-git-sync",
-  "displayName": "vs-git-sync",
+  "name": "vsc-git-sync",
+  "displayName": "vsc-git-sync",
   "description": "Prompts to switch git accounts on startup.",
   "version": "0.0.1",
   "engines": {
@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
         {
-          "command": "vs-git-sync.selectAccount",
-          "title": "VS Git Sync: Select Account"
+          "command": "vsc-git-sync.selectAccount",
+          "title": "VSC Git Sync: Select Account"
         }
     ]
   },
