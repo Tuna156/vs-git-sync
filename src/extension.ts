@@ -12,15 +12,16 @@ export async function activate(context: vscode.ExtensionContext) {
     });
 
     context.subscriptions.push(disposable);
-    
+
 
     vscode.authentication.onDidChangeSessions(async ({ provider }) => {
-        if(provider.id !== 'github') return;
+        if (provider.id !== 'github') return;
 
-        const session = await vscode.authentication.getSession('github', ['user:email'], { });
-        if(!session) return;
+        const session = await vscode.authentication.getSession('github', ['user:email'], {});
+        if (!session) return;
 
-        setGitConfig(session);
+        await setGitConfig(session);
+        vscode.commands.executeCommand('workbench.action.reloadWindow');
     });
 }
 
